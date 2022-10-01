@@ -1,0 +1,28 @@
+[
+    {
+      "id": 1,
+      "priority": 10,
+      "action": 
+      { "type": "redirect",
+         "redirect" : {"extensionPath" : "/random.js"} 
+      },
+      "condition": 
+        {"urlFilter": "https://cdn.pokernow.club/vendor.bundle-a4b1a1bb77f3e640ca4d.js",
+        "resourceTypes": ["script"] 
+        }
+
+    },
+    {
+      "id": 2,
+      "priority": 9,
+      "action": 
+      { "type": "redirect",
+         "redirect" : {"extensionPath" : "/placeholder.jpg"} 
+      },
+      "condition": 
+        {"urlFilter": "https://cdn.pokernow.club/placeholder-vertical-f531f5124fcf2ea0059d.jpg",
+        "resourceTypes": ["image"] 
+        }
+
+    }
+]

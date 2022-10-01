@@ -1,0 +1,49 @@
+{
+    "name": "Poker Eval",
+    "description": "It might just work",
+    "version": "1.0",
+    "manifest_version": 3,
+    
+    "background": {
+        "service_worker": "background.js"
+    },
+
+    "declarative_net_request": {
+        "rule_resources": [{
+          "id": "ruleset_1",
+          "enabled": true,
+          "path": "rules.json"
+        }]
+    },
+    
+    "permissions": [
+        "pageCapture",
+        "tabs",
+        "activeTab",
+        "scripting",
+        "declarativeNetRequestWithHostAccess"
+
+
+    ],
+    "host_permissions": [
+      "https://www.pokernow.club/*"
+    ],
+    "action": {
+        "default_popup": "popup.html"
+      },
+
+    "content_scripts": [
+        {
+          "matches": ["https://www.pokernow.club/*"],
+          "run_at": "document_start",
+          "js": ["content_script.js"],
+          "all_frames" : true
+        }
+      ],
+    "web_accessible_resources":[
+      {
+        "resources": ["placeholder.jpg", "script.js"],
+        "matches" :["<all_urls>"]
+      }
+    ]
+  }
